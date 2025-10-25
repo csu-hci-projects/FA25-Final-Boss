@@ -633,6 +633,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39b35f26dd08d8e438961c312f03f330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CursorLock
+--- !u!114 &882989932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882989921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62c6c7ef4f0ec494bba7d8f1aa8e6d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCrouch
+  crouchHeight: 1
+  standHeight: 2
+  crouchSpeed: 7
+  cameraTransform: {fileID: 674560219}
 --- !u!1001 &793269882722790590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -685,7 +701,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7811659933621147736, guid: 5a17c917d55679e498457e28ea2df317, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2296433042059549066, guid: 5a17c917d55679e498457e28ea2df317, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2720293409378759851, guid: 5a17c917d55679e498457e28ea2df317, type: 3}
@@ -701,6 +722,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4996326260923512179, guid: 5a17c917d55679e498457e28ea2df317, type: 3}
       insertIndex: -1
       addedObject: {fileID: 882989931}
+    - targetCorrespondingSourceObject: {fileID: 4996326260923512179, guid: 5a17c917d55679e498457e28ea2df317, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 882989932}
   m_SourcePrefab: {fileID: 100100000, guid: 5a17c917d55679e498457e28ea2df317, type: 3}
 --- !u!1001 &6883291519191079095
 PrefabInstance:
