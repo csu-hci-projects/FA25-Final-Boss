@@ -51,7 +51,9 @@
     <Compile Include="Assets\Scripts\crouch.cs" />
     <Compile Include="Assets\Scripts\cursorlock.cs" />
     <Compile Include="Assets\Scripts\move.cs" />
+    <Compile Include="Assets\Scripts\stamina.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\sprint.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
