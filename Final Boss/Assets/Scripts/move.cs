@@ -1,24 +1,38 @@
 using UnityEngine;
 
-public class move : MonoBehaviour
+public class FirstPersonMovement : MonoBehaviour
 {
-    public float speed = 6f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float speed = 5f;
+    public Transform cameraTransform;
+    private CharacterController controller;
+
     void Start()
     {
-        
+        controller = GetComponent<CharacterController>();
+        if(cameraTransform == null && Camera.main != null)
+        {
+            cameraTransform = Camera.main.transform;
+        }
+            
     }
 
-    // Update is called once per frame
     void Update()
     {
-        float speedFactor = speed * Time.deltaTime;
 
-        float x = speedFactor * Input.GetAxis("Horizontal"); 
-        float y = 0f;
-        float z = speedFactor * Input.GetAxis("Vertical");  
-        
+        float X = Input.GetAxis("Horizontal"); 
+        float Z = Input.GetAxis("Vertical");  
 
-        transform.Translate(x, y, z);
+        Vector3 forward = cameraTransform.forward;
+        Vector3 right = cameraTransform.right;
+
+        forward.y = 0f;
+        right.y = 0f;
+
+        forward.Normalize();
+        right.Normalize();
+
+        Vector3 moveDirection = (forward * Z + right * X).normalized;
+
+        controller.SimpleMove(moveDirection * speed);
     }
 }
