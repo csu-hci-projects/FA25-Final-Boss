@@ -5,13 +5,6 @@ public class FirstPersonMovement : MonoBehaviour
     public float speed = 5f;
     public Transform cameraTransform;
     private CharacterController controller;
-    GameEnding gameEnding;
-
-    void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.CompareTag("Enemy")) {
-            gameEnding.CaughtPlayer();
-        }
-    }
 
     void Start()
     {
