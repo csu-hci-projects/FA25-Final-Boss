@@ -874,6 +874,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1097051676 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6237150586547400729, guid: 06371b86c1d32c245a2b888385b87234, type: 3}
+  m_PrefabInstance: {fileID: 6165838617764253351}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1097051679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097051676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac77ad6db346ef64ca756b1ac06b8df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Observer
+  player: {fileID: 882989925}
+  gameEnding: {fileID: 1858557315}
 --- !u!1 &1422044778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,7 +1163,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6237150586547400729, guid: 06371b86c1d32c245a2b888385b87234, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1097051679}
   m_SourcePrefab: {fileID: 100100000, guid: 06371b86c1d32c245a2b888385b87234, type: 3}
 --- !u!1001 &6883291519191079095
 PrefabInstance:
