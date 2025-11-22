@@ -21,14 +21,14 @@ public class Observer : MonoBehaviour {
         }
     }
 
-    void update() {
+    void Update() {
         if (m_IsPlayerInRange) {
             Vector3 direction = player.position - transform.position + Vector3.up;
             Ray ray = new Ray(transform.position, direction);
             RaycastHit raycastHit;
 
             if (Physics.Raycast(ray, out raycastHit)) {
-                if (raycastHit.collider.transform == player) {
+                if (raycastHit.collider.CompareTag("Player")) {
                     gameEnding.CaughtPlayer();
                 }
             }

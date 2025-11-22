@@ -23,6 +23,7 @@ public class GameEnding : MonoBehaviour {
     }
 
     public void CaughtPlayer() {
+        Debug.Log("CaughtPlayer() method called in GameEnding script!");
         m_IsPlayerCaught = true;
     }
 
