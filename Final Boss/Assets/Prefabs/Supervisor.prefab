@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3271845477143976222}
   - component: {fileID: 2689502030712784620}
   - component: {fileID: 5390733544502058367}
-  - component: {fileID: 8961137491234547829}
   - component: {fileID: 8515170240237830347}
   m_Layer: 0
   m_Name: Supervisor
@@ -120,19 +119,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8961137491234547829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3588512911696737257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 228e243f03ba51c4da75ce5b43aca969, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyFollow
-  speed: 1
 --- !u!65 &8515170240237830347
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -223,4 +209,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Observer
   player: {fileID: 0}
-  gameEnding: {fileID: 0}
