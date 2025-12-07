@@ -35,15 +35,24 @@ public class GameEnding : MonoBehaviour {
         }
     }
 
-    void EndLevel(CanvasGroup imageCanvasGroup, bool doRestart) {
-        m_Timer += Time.deltaTime;
-        imageCanvasGroup.alpha = m_Timer / fadeDuration;
+    void EndLevel(CanvasGroup imageCanvasGroup, bool doRestart)
+{
+    m_Timer += Time.deltaTime;
 
-        if (doRestart) {
+    imageCanvasGroup.alpha = m_Timer / fadeDuration;
+
+    if (m_Timer > fadeDuration + displayImageDuration)
+    {
+        if (doRestart)
+        {
             SceneManager.LoadScene(0);
-        } else {
+        }
+        else
+        {
             Application.Quit();
         }
     }
+}
+
 
 }

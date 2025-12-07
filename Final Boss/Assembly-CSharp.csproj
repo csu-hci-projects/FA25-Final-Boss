@@ -50,8 +50,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\crouch.cs" />
     <Compile Include="Assets\Scripts\cursorlock.cs" />
+    <Compile Include="Assets\Scripts\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\move.cs" />
-    <Compile Include="Assets\Scripts\WayPoints.cs" />
+    <Compile Include="Assets\Scripts\EnemyCatch.cs" />
     <Compile Include="Assets\Scripts\stamina.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\GameEnding.cs" />

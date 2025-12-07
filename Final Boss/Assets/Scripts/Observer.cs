@@ -1,38 +1,47 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
-
-public class Observer : MonoBehaviour {
-
+public class Observer : MonoBehaviour
+{
     public Transform player;
-    public GameEnding gameEnding;
-    bool m_IsPlayerInRange;
 
-    void OnTriggerEnter(Collider other) {
-        if (other.transform == player) {
-            m_IsPlayerInRange = true;
+    public bool IsPlayerInSight { get; private set; }
+    private bool playerInsideTrigger = false;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInsideTrigger = true;
+            CheckLineOfSight();
         }
     }
 
-    void OnTriggerExit (Collider other) {
-        if (other.transform == player) {
-            m_IsPlayerInRange = false;
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInsideTrigger = false;
+            IsPlayerInSight = false;
         }
     }
 
-    void Update() {
-        if (m_IsPlayerInRange) {
-            Vector3 direction = player.position - transform.position + Vector3.up;
-            Ray ray = new Ray(transform.position, direction);
-            RaycastHit raycastHit;
-
-            if (Physics.Raycast(ray, out raycastHit)) {
-                if (raycastHit.collider.CompareTag("Player")) {
-                    gameEnding.CaughtPlayer();
-                }
-            }
-        }
+    private void Update()
+    {
+        if (playerInsideTrigger)
+            CheckLineOfSight();
     }
 
+    void CheckLineOfSight()
+    {
+        Vector3 direction = player.position - transform.position;
+
+        if (Physics.Raycast(transform.position, direction, out RaycastHit hit))
+        {
+            IsPlayerInSight = hit.collider.CompareTag("Player");
+        }
+        else
+        {
+            IsPlayerInSight = false;
+        }
+    }
 }
