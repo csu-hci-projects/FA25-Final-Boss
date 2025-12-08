@@ -10,7 +10,6 @@ public class EnemyAI : MonoBehaviour
 
     public float patrolSpeed = 2f;
     public float chaseSpeed = 4f;
-
     public AudioSource patrolAudio; 
     public AudioSource chaseAudio; 
 
