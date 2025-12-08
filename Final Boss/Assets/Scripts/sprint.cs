@@ -21,23 +21,23 @@ public class PlayerSprint : MonoBehaviour
 
     void Update()
     {
-        // Only allow sprinting if stamina system permits
-        if (canSprint && Input.GetKey(KeyCode.LeftShift))
+        if(canSprint && Input.GetKey(KeyCode.LeftShift))
+        {
             isSprinting = true;
+        }
         else
+        {
             isSprinting = false;
+        }
 
         float targetSpeed = isSprinting ? sprintSpeed : normalSpeed;
         currentSpeed = Mathf.Lerp(currentSpeed, targetSpeed, Time.deltaTime * acceleration);
         movement.speed = currentSpeed;
     }
-
-    // --- Called by the stamina system ---
     public void SetSprintAllowed(bool allowed)
     {
         canSprint = allowed;
     }
-
     public bool CanSprint()
     {
         return canSprint;
