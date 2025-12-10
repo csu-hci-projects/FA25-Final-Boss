@@ -43,9 +43,9 @@ public class GameEnding : MonoBehaviour {
 
     if (m_Timer > fadeDuration + displayImageDuration)
     {
-        if (doRestart)
+        if(doRestart)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
         else
         {

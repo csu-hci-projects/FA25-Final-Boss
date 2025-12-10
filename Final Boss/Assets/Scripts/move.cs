@@ -36,13 +36,11 @@ public class Move : MonoBehaviour
 
         Vector3 moveDirection = (forward * Z + right * X).normalized;
 
-        // Apply movement
         controller.Move(moveDirection * speed * Time.deltaTime);
 
-        // Apply gravity manually
         if (controller.isGrounded && velocity.y < 0)
         {
-            velocity.y = -2f; // small push downward to keep grounded
+            velocity.y = -2f; 
         }
 
         velocity.y += gravity * Time.deltaTime;
