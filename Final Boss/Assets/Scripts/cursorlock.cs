@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Cursorlock : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Cursorlock : MonoBehaviour
         // Press Escape to toggle
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            SceneManager.LoadScene(0);
+
             if(Cursor.lockState == CursorLockMode.Locked)
             {
                 UnlockCursor();
