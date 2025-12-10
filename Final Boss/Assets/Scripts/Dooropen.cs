@@ -19,6 +19,8 @@ public class DoorOpen : MonoBehaviour
             if(Inventory.hasKey)
             {
                 Destroy(gameObject);
+                KeyUI.instance.ShowKeyIcon(false);
+                Inventory.hasKey = false;
             }
             else
             {
