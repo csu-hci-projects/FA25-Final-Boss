@@ -1,14 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIKeyDisplay : MonoBehaviour
+public class KeyUI : MonoBehaviour
 {
-    public static UIKeyDisplay instance;
+    public static KeyUI instance;
     public Image keyIcon;
 
     void Awake()
     {
         instance = this;
+        keyIcon.enabled = false;
     }
 
     public void ShowKeyIcon(bool show)

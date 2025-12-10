@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class KeyPickup : MonoBehaviour
+public class Pickup : MonoBehaviour
 {
-    public float pickupDistance = 3f;
+    public float pickupDistance = 2f;
     private Transform player;
 
     void Start()
@@ -14,11 +14,12 @@ public class KeyPickup : MonoBehaviour
     {
         float dist = Vector3.Distance(player.position, transform.position);
 
-        if (dist <= pickupDistance && Input.GetKeyDown(KeyCode.E))
+        if(dist <= pickupDistance && Input.GetKeyDown(KeyCode.E))
         {
-            PlayerInventory.hasKey = true;
-            UIKeyDisplay.instance.ShowKeyIcon(true);
+            KeyUI.instance.ShowKeyIcon(true);
+            Inventory.hasKey = true;
             Destroy(gameObject);
         }
     }
+
 }

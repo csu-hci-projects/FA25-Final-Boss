@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class PlayerCrouch : MonoBehaviour
+public class Crouch : MonoBehaviour
 {
     [Header("Crouch Settings")]
     public float crouchHeight = 1.0f;     

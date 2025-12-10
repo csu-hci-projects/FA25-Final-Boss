@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class spawner : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
     public GameObject keyPrefab;
     public Transform[] spawnPoints;
@@ -13,6 +13,6 @@ public class spawner : MonoBehaviour
     void SpawnKeyAtRandomLocation()
     {
         int index = Random.Range(0, spawnPoints.Length);
-        Instantiate(keyPrefab, spawnPoints[index].position, spawnPoints[index].rotation);
+        Instantiate(keyPrefab, spawnPoints[index].position, keyPrefab.transform.rotation);
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CursorLock : MonoBehaviour
+public class Cursorlock : MonoBehaviour
 {
     void Start()
     {

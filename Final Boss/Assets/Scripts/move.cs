@@ -1,26 +1,29 @@
 using UnityEngine;
 
-public class FirstPersonMovement : MonoBehaviour
+public class Move : MonoBehaviour
 {
     public float speed = 5f;
+    public float gravity = -9.81f;
+
     public Transform cameraTransform;
     private CharacterController controller;
+
+    private Vector3 velocity;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        if(cameraTransform == null && Camera.main != null)
+
+        if (cameraTransform == null && Camera.main != null)
         {
             cameraTransform = Camera.main.transform;
         }
-            
     }
 
     void Update()
     {
-
-        float X = Input.GetAxis("Horizontal"); 
-        float Z = Input.GetAxis("Vertical");  
+        float X = Input.GetAxisRaw("Horizontal");
+        float Z = Input.GetAxisRaw("Vertical");
 
         Vector3 forward = cameraTransform.forward;
         Vector3 right = cameraTransform.right;
@@ -33,6 +36,16 @@ public class FirstPersonMovement : MonoBehaviour
 
         Vector3 moveDirection = (forward * Z + right * X).normalized;
 
-        controller.SimpleMove(moveDirection * speed);
+        // Apply movement
+        controller.Move(moveDirection * speed * Time.deltaTime);
+
+        // Apply gravity manually
+        if (controller.isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f; // small push downward to keep grounded
+        }
+
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
     }
 }
