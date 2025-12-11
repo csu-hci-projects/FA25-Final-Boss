@@ -16,11 +16,17 @@ public class DoorOpen : MonoBehaviour
 
         if (dist <= interactDistance && Input.GetKeyDown(KeyCode.E))
         {
-            if(Inventory.hasKey)
+            if (Inventory.hasKey)
             {
+                // Open the door
                 Destroy(gameObject);
                 Inventory.hasKey = false;
                 KeyUI.instance.ShowKeyIcon(false);
+
+                // Notify the enemy that the player escaped
+                EnemyAI enemy = FindObjectOfType<EnemyAI>();
+                if (enemy != null)
+                    enemy.PlayerEscaped();  // Play escape voiceline
             }
             else
             {

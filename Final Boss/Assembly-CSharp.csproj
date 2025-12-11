@@ -53,9 +53,12 @@
     <Compile Include="Assets\Scripts\cursorlock.cs" />
     <Compile Include="Assets\Scripts\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\move.cs" />
+    <Compile Include="Assets\Scripts\VoiceUI.cs" />
     <Compile Include="Assets\Scripts\Teleport.cs" />
     <Compile Include="Assets\Scripts\inventory.cs" />
     <Compile Include="Assets\Scripts\EnemyCatch.cs" />
+    <Compile Include="Assets\Scripts\Voicelines.cs" />
+    <Compile Include="Assets\Scripts\VoicelineClip.cs" />
     <Compile Include="Assets\Scripts\pickup.cs" />
     <Compile Include="Assets\Scripts\Dooropen.cs" />
     <Compile Include="Assets\Scripts\stamina.cs" />
